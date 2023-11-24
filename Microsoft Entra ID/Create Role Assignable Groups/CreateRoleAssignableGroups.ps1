@@ -31,7 +31,7 @@ Install-Module Microsoft.Graph -Scope CurrentUser -Force
 Import-Module Microsoft.Graph.Groups
 
 # Authenticate with Microsoft Graph using additional scopes
-Connect-MgGraph -Scopes "Group.ReadWrite.All", "Directory.ReadWrite.All", "RoleManagement.ReadWrite.Directory"
+Connect-MgGraph -Scopes "Group.ReadWrite.All", "RoleManagement.ReadWrite.Directory"
 
 # Define the security groups to be created
 $securityGroups = @(
