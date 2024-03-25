@@ -33,4 +33,4 @@ This PowerShell script is designed for Exchange Online administrators to audit a
 
 This script is intended for Exchange Online administrative use. Always test scripts in a non-production environment before applying them to your live environment to ensure compatibility and avoid unintended effects.
 
-If the policy that returns is 'None' then the account doesn't have an authentication policy assigned and Exchange uses the default policy for the organization (the one managed through the Microsoft 365 admin center). Recommendation is to create a custom policy which will block all protocols by default and asign this to your users, ideally as the new default authentication policy.
+If the policy that returns is 'None' then the account doesn't have an authentication policy assigned and Exchange uses the default policy for the organization (the one managed through the Microsoft 365 admin center). Recommendation is to create a custom policy which will block all protocols by default and assign this to your users, ideally as the new default authentication policy.
