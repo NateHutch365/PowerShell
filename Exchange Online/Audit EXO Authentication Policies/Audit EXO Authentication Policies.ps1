@@ -61,7 +61,7 @@ foreach ($domain in $domains) {
 }
 
 # Define the path for the CSV export
-$csvPath = "C:\Path\To\Output\MultipleDomainsUsersAuthPolicies.csv"
+$csvPath = "C:\Path\To\Output\AuthenticationPoliciesReport.csv"
 
 # Export the results to a CSV file
 $results | Export-Csv -Path $csvPath -NoTypeInformation
