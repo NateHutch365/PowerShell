@@ -21,7 +21,7 @@ This PowerShell script is designed to automate the creation of mail contacts in 
 
 ## Prerequisites
 
-- You must have Exchange Online Management or Global Administrator permissions to run this script.
+- You must have Exchange Administrator or Global Administrator permissions to run this script.
 - PowerShell session connected to Exchange Online.
 
 ## Required Files

@@ -12,7 +12,7 @@
     Author: Nathan Hutchinson
     Website: https://natehutchinson.co.uk
     GitHub: https://github.com/NateHutch365
-    Required Role: Exchange Online Management or Global Administrator
+    Required Role: Exchange Administrator or Global Administrator
 
     .EXAMPLE
     PS> .\CreateMailContacts.ps1
