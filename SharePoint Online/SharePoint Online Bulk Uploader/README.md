@@ -36,7 +36,7 @@ This PowerShell script facilitates the recursive uploading of files and folders 
    - Check the specified log file after running the script to ensure all files were uploaded successfully and to troubleshoot any errors.
 
 ## Configuration
-Modify the variables `$localDirectory`, `$sharePointFolder`, and `$logFile` within the script to match your specific requirements before running the script.
+Modify the variables `$siteUrl`, `$localDirectory`, `$sharePointFolder`, and `$logFile` within the script to match your specific requirements before running the script.
 
 ## Logging
 - **File**: The script outputs a log to a CSV file at the location specified by the `$logFile` parameter.
