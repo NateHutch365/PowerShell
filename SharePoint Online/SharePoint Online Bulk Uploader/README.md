@@ -21,6 +21,7 @@ This PowerShell script facilitates the recursive uploading of files and folders 
 
 ## Usage
 1. **Set Script Parameters**:
+   - `$siteUrl`: Set to the site URL (line 28)
    - `$localDirectory`: Set to the path of the local directory you want to upload.
    - `$sharePointFolder`: Set to the SharePoint folder URL where the contents will be uploaded.
    - `$logFile`: Set to the path where the log file should be created.
