@@ -29,7 +29,7 @@ This PowerShell script facilitates the recursive uploading of files and folders 
 2. **Run the Script**:
    - Execute the script in PowerShell by running:
      ```powershell
-     .\UploadToSharePoint.ps1
+     .\SPOBulkUploader.ps1
      ```
 
 3. **Review the Log**:
