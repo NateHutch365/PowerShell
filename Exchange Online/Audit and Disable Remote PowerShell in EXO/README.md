@@ -18,7 +18,7 @@ This repository contains two PowerShell scripts for managing Remote PowerShell a
 ### 1. Auditing Remote PowerShell Access
 
 - Run the first script to generate a CSV file with details on which users have Remote PowerShell enabled. 
-- Script path: `C:\TS-Temp\RemotePowerShellAudit.csv`
+- Script path: `C:\Path\To\Temp\RemotePowerShellAudit.csv`
 - Review the CSV and decide which users should have Remote PowerShell disabled.
 
 ### 2. Preparing the TXT File
@@ -26,7 +26,7 @@ This repository contains two PowerShell scripts for managing Remote PowerShell a
 - Open the exported CSV file.
 - Delete the rows corresponding to users who should retain Remote PowerShell access.
 - Copy the remaining UPNs and paste them into a new TXT file, ensuring only one UPN per line with no headers.
-- Save the TXT file as `C:\TS-Temp\RemovePowerShell.txt`.
+- Save the TXT file as `C:\Path\To\Temp\RemovePowerShell.txt`.
 
 ### 3. Disabling Remote PowerShell
 

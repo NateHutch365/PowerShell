@@ -17,7 +17,7 @@ Website: natehutchinson.co.uk
 GitHub: https://github.com/NateHutch365
 #>
 
-$UserList = Get-Content "C:\TS-Temp\RemovePowerShell.txt"
+$UserList = Get-Content "C:\Path\To\Temp\RemovePowerShell.txt"
 
 $UserList | ForEach-Object {
     Set-User -Identity $_ -RemotePowerShellEnabled $false -Confirm:$false
