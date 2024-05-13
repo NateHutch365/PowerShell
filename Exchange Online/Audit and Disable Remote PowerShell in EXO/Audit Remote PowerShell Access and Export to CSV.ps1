@@ -21,6 +21,6 @@ GitHub: https://github.com/NateHutch365
 Connect-ExchangeOnline
 
 # Retrieve RemotePowerShellEnabled status for all users and export to CSV
-Get-User -ResultSize unlimited | Select-Object Name,DisplayName,RemotePowerShellEnabled,UserPrincipalName | Export-Csv -Path "C:\TS-Temp\RemotePowerShellAudit.csv" -NoTypeInformation
+Get-User -ResultSize unlimited | Select-Object Name,DisplayName,RemotePowerShellEnabled,UserPrincipalName | Export-Csv -Path "C:\Path\To\Temp\RemotePowerShellAudit.csv" -NoTypeInformation
 
 Write-Output "Export complete. Remote PowerShell audit results saved to C:\Path\To\Temp\RemotePowerShellAudit.csv"
