@@ -20,9 +20,9 @@ This PowerShell script identifies Microsoft 365 users who have not logged in for
 ## Installation
 
 1. Clone the repository or download the script file directly:
-   ```bash
-   git clone https://github.com/NateHutch365/m365-inactive-user-script.git
-
+    ```bash
+    git clone https://github.com/NateHutch365/m365-inactive-users.git
+    ```
 2. Navigate to the directory containing the script.
 
 ## Usage
@@ -30,22 +30,23 @@ This PowerShell script identifies Microsoft 365 users who have not logged in for
 To run the script, open PowerShell and navigate to the script's directory. Modify the script parameters `$daysInactive` and `$outputCsvLocation` as needed to fit your requirements:
 
 1. **Set the number of inactive days**:
-   - Modify the `$daysInactive` variable to set the number of days to check for inactivity.
-
+    - Modify the `$daysInactive` variable to set the number of days to check for inactivity.
 2. **Set the CSV output location**:
-   - Change `$outputCsvLocation` to specify the path and filename where the CSV output should be saved.
+    - Change `$outputCsvLocation` to specify the path and filename where the CSV output should be saved.
 
 Execute the script by running:
-   ```powershell
-   .\CheckInactiveUsers.ps1
+    ```powershell
+    .\CheckInactiveUsers.ps1
+    ```
 
 ## Example
 
 Running the script with 30 days of inactivity threshold and exporting to "C:\Reports\inactive_users.csv":
-   ```powershell
-   $daysInactive = 30
-   $outputCsvLocation = "C:\Reports\inactive_users.csv"
-   .\CheckInactiveUsers.ps1
+    ```powershell
+    $daysInactive = 30
+    $outputCsvLocation = "C:\Reports\inactive_users.csv"
+    .\CheckInactiveUsers.ps1
+    ```
 
 ## Author
 
