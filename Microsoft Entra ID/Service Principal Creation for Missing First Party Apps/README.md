@@ -7,6 +7,7 @@ The apps that needed manually adding in my case were:
 
 App Name: **MicrosoftDefenderATP MAM**
 AppId: c2b688fe-48c0-464b-a89c-67041aa8fcb2
+
 App Name: **Microsoft Defender for Mobile**
 AppId: dd47d17a-3194-4d86-bfd5-c6ae6f5651e3
 
