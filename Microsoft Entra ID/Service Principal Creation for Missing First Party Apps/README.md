@@ -11,6 +11,12 @@ AppId: c2b688fe-48c0-464b-a89c-67041aa8fcb2
 App Name: **Microsoft Defender for Mobile**
 AppId: dd47d17a-3194-4d86-bfd5-c6ae6f5651e3
 
+App Name: **Xplat Broker App**
+AppId: a0e84e36-b067-4d5c-ab4a-3db38e598ae2
+
+App Name: **TVM app**
+AppId: e724aa31-0f56-4018-b8be-f8cb82ca1196
+
 This PowerShell script connects to Microsoft Graph, creates a service principal for the **AppId** specified, and retrieves its details.
 
 ## Description
