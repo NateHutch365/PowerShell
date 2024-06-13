@@ -1,9 +1,16 @@
 
 # Microsoft Graph Service Principal Creation Script
 
-I came across an issue when using the zero-trust approach to conditional access **(All Cloud Apps)** when I was unable to target the app **MicrosoftDefenderATP MAM** which is used for MAM deployment of MDE on mobiles. In my case I was targeting app protection policies to all cloud apps and had an app block policy which also targeted all cloud apps, so I needed to exclude this app to restore functionality. The app should have existed in the tenant, but it did not, using the **AppId** from another tenant I was able to manually add it in and resolve my issue.
+I came across an issue when using the zero-trust architecture approach to conditional access. When targeting **(All Cloud Apps)** when I was unable to exclude a selection of apps used for MAM deployment of MDE on mobiles. In my case I was targeting app protection policies to all cloud apps and had an app block policy which also targeted all cloud apps, so I needed to exclude this app to restore functionality. The app should have existed in the tenant, but it did not, using the **AppId** from another tenant I was able to manually add it in and resolve my issue.
 
-This PowerShell script connects to Microsoft Graph, creates a service principal for the **MicrosoftDefenderATP MAM** application, and retrieves its details. You can substitute the AppId of other apps and it should work.
+The apps that needed manually adding in my case were:
+
+App Name: **MicrosoftDefenderATP MAM**
+AppId: c2b688fe-48c0-464b-a89c-67041aa8fcb2
+App Name: **Microsoft Defender for Mobile**
+AppId: dd47d17a-3194-4d86-bfd5-c6ae6f5651e3
+
+This PowerShell script connects to Microsoft Graph, creates a service principal for the **AppId** specified, and retrieves its details.
 
 ## Description
 
