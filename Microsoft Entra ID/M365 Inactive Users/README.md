@@ -48,6 +48,10 @@ Running the script with 30 days of inactivity threshold and exporting to "C:\Rep
     .\CheckInactiveUsers.ps1
     ```
 
+## Issues
+
+I had a strange issue with one or two where the date format is incorrect, adjusting in Azure portal did not resolve it. To fix it, copy the LastSignIn column to a new workbook and use text to columns to switch to UK date format (https://www.youtube.com/shorts/F8_1LU0hFsE) then paste back into the original export 🤷‍♂️
+
 ## Author
 
 **Nathan Hutchinson**
