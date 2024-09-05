@@ -6,7 +6,7 @@ This PowerShell script checks for inactive Microsoft 365 users who have not logg
 The script retrieves user accounts from Microsoft 365, checks for users who haven't logged in for a specified number of days, and exports a list of these inactive users to a CSV file. It only includes users whose accounts are enabled.
 
 .VERSION
-1.0
+1.1
 
 .AUTHOR
 Nathan Hutchinson
@@ -41,7 +41,9 @@ foreach ($user in $users) {
             try {
                 $lastSignIn = [DateTime]::Parse($user.SignInActivity.LastSignInDateTime)
                 if ($lastSignIn -lt $dateCutoff) {
-                    $inactiveUsers += $user | Select-Object Id, DisplayName, UserPrincipalName, @{Name="LastSignIn"; Expression={$lastSignIn}}, AccountEnabled
+                    # Format the date to UK style (DD/MM/YYYY) and remove the time
+                    $formattedLastSignIn = $lastSignIn.ToString("dd/MM/yyyy")
+                    $inactiveUsers += $user | Select-Object Id, DisplayName, UserPrincipalName, @{Name="LastSignIn"; Expression={$formattedLastSignIn}}, AccountEnabled
                 }
             } catch {
                 Write-Host "Unable to parse LastSignInDateTime for user: $($user.DisplayName)"
