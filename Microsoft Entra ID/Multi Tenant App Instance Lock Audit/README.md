@@ -48,6 +48,11 @@ The script generates a CSV file with the following information for each multi-te
 - Credentials Used for Signing Tokens Locked status
 - Token Encryption Key ID Locked status
 
+## Example Output CSV
+
+![image](https://github.com/user-attachments/assets/b80cadce-5f55-4fc7-8fd5-c40ea320f99c)
+
+
 ## Contributing
 
 Contributions to improve the script are welcome. Please feel free to submit a Pull Request.
