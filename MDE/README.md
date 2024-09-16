@@ -6,6 +6,6 @@ Anyone having issues onboarding devices to MDE after upgrading from Home to Pro 
 
 ```powershell
     Get-WindowsCapability -Name '*Sense*' -Online | Add-WindowsCapability –Online
-    ```
+```
 
 Alternatively, you can use this to deploy via Intune: https://github.com/mtniehaus/AutopilotBranding
