@@ -13,6 +13,11 @@ Nathan Hutchinson
 Website: natehutchinson.co.uk
 GitHub: https://github.com/NateHutch365
 
+.CONTRIBUTERS
+William Francillette
+Website: french365connection.co.uk
+GitHub: https://github.com/William-Francillette
+
 .NOTES
 Requires Microsoft Graph PowerShell SDK and Global Administrator permissions to run.
 
@@ -34,21 +39,20 @@ $dateCutoff = (Get-Date).AddDays(-$daysInactive)
 # Retrieve users and check their sign-in activity and account status
 $users = Get-MgUser -All:$true -Property "Id,DisplayName,UserPrincipalName,SignInActivity,AccountEnabled"
 $inactiveUsers = @()
-
 foreach ($user in $users) {
     if ($user.AccountEnabled -eq $true) {
-        if ($user.SignInActivity) {
+        if ($null -ne $user.SignInActivity.LastSignInDateTime) {
             try {
-                $lastSignIn = [DateTime]::Parse($user.SignInActivity.LastSignInDateTime)
+                $lastSignIn = $user.SignInActivity.LastSignInDateTime
                 if ($lastSignIn -lt $dateCutoff) {
-                    # Format the date to UK style (DD/MM/YYYY) and remove the time
-                    $formattedLastSignIn = $lastSignIn.ToString("dd/MM/yyyy")
-                    $inactiveUsers += $user | Select-Object Id, DisplayName, UserPrincipalName, @{Name="LastSignIn"; Expression={$formattedLastSignIn}}, AccountEnabled
+                    Write-Host " LastSignInDateTime for user: $($user.DisplayName) - $($lastSignIn.toString("dd/MM/yyyy hh:mm:ss"))"
+                    $inactiveUsers += $user | Select-Object Id, DisplayName, UserPrincipalName, @{Name="LastSignIn"; Expression={$lastSignIn.toString("dd/MM/yyyy hh:mm:ss")}}, AccountEnabled
                 }
             } catch {
                 Write-Host "Unable to parse LastSignInDateTime for user: $($user.DisplayName)"
             }
         } else {
+            $inactiveUsers += $user | Select-Object Id, DisplayName, UserPrincipalName, @{Name="LastSignIn"; Expression={"Never"}}, AccountEnabled
             Write-Host "No SignInActivity found for user: $($user.DisplayName)"
         }
     } else {
