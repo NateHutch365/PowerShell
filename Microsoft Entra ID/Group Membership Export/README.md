@@ -31,6 +31,11 @@
 ```
    .\GetGroupMembership.ps1 -GroupName "CA-Internals" -Verbose
 ```
+
+   - You can also use the `-Display` flag to output the list to the terminal
+```
+   .\GetGroupMembership.ps1 -GroupName "CA-Internals" -Display
+```
    - The `-Verbose` flag provides detailed output for troubleshooting.
    - The script will prompt you to sign in to Microsoft Graph. Use an account with the necessary permissions.
 

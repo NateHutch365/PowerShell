@@ -5,8 +5,8 @@
 .DESCRIPTION
     This script connects to Microsoft Graph using delegated permissions, retrieves the specified group's members,
     and then loops through each member to retrieve user details. If the member is a user and has a userPrincipalName,
-    it adds the value to a list. The final list is then output to a text file located in "C:\TS-Temp" with the file name
-    based on the provided group name (e.g., "CA-Staff.txt").
+    it adds the value to a list. The final list can either be output to a text file located in "C:\TS-Temp" (named
+    based on the provided group name, e.g., "CA-Staff.txt") or displayed in the terminal window based on a switch parameter.
 
 .VERSION
     1.0.0
@@ -29,7 +29,11 @@
 param(
     [Parameter(Mandatory = $true,
                HelpMessage = "Enter the group's display name or ObjectId.")]
-    [string]$GroupName
+    [string]$GroupName,
+
+    [Parameter(Mandatory = $false,
+               HelpMessage = "If specified, displays group membership in the terminal window instead of outputting to a text file.")]
+    [switch]$Display
 )
 
 # Automatically set the output file using the provided group name.
@@ -99,9 +103,14 @@ foreach ($member in $Members) {
 if ($UserPrincipalNames.Count -eq 0) {
     Write-Host "No user objects found in group '$GroupName'." -ForegroundColor Yellow
 } else {
-    Write-Verbose "Writing userPrincipalNames to file: $OutputFile"
-    # Write the list to the output file.
-    $UserPrincipalNames | Out-File -FilePath $OutputFile -Verbose
-
-    Write-Host "Export complete. The userPrincipalNames have been saved to: $OutputFile" -ForegroundColor Green
+    if ($Display) {
+        Write-Host "User Principal Names for group '$GroupName':" -ForegroundColor Cyan
+        $UserPrincipalNames | ForEach-Object { Write-Host $_ }
+    }
+    else {
+        Write-Verbose "Writing userPrincipalNames to file: $OutputFile"
+        # Write the list to the output file.
+        $UserPrincipalNames | Out-File -FilePath $OutputFile -Verbose
+        Write-Host "Export complete. The userPrincipalNames have been saved to: $OutputFile" -ForegroundColor Green
+    }
 }
